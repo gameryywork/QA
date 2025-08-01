@@ -48,7 +48,7 @@ Bingo 对局中，玩家标记数字、使用道具、触发奖励等操作需�
 # 代码部分
 
 ``` csharp
-public delegate void OnRequestCallback(IResponseData data);
+public delegate void OnResponseCallback(IResponseData data);
 
 public interface IRequestData
 {
@@ -90,7 +90,7 @@ public interface IClient
     /// <param name="callback"></param>
     /// <param name="config">实例特殊的配置需求</param>
     /// <returns></returns>
-    int SendData(IRequestData data, OnRequestCallback callback = null, ISendConfig config = null);
+    int SendData(IRequestData data, OnResponseCallback callback = null, ISendConfig config = null);
     void OnReceiveData(byte[] data);
 
     void Heart();
